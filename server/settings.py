@@ -12,17 +12,7 @@
 import os
 from flask import json
 from pathlib import Path
-
-
-def env(variable, fallback_value=None):
-    env_value = os.environ.get(variable, '')
-    if len(env_value) == 0:
-        return fallback_value
-    else:
-        if env_value == "__EMPTY__":
-            return ''
-        else:
-            return env_value
+from superdesk.default_settings import env, strtobool
 
 
 ABS_PATH = str(Path(__file__).resolve().parent)
