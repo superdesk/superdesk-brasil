@@ -17,7 +17,7 @@ from superdesk.default_settings import env, strtobool
 
 ABS_PATH = str(Path(__file__).resolve().parent)
 
-init_data = Path(ABS_PATH) / 'data'
+init_data = Path(ABS_PATH) / "data"
 if init_data.exists():
     INIT_DATA_PATH = init_data
 
@@ -27,26 +27,26 @@ INSTALLED_APPS = [
 ]
 
 RENDITIONS = {
-    'picture': {
-        'thumbnail': {'width': 220, 'height': 120},
-        'viewImage': {'width': 640, 'height': 640},
-        'baseImage': {'width': 1400, 'height': 1400},
+    "picture": {
+        "thumbnail": {"width": 220, "height": 120},
+        "viewImage": {"width": 640, "height": 640},
+        "baseImage": {"width": 1400, "height": 1400},
     },
-    'avatar': {
-        'thumbnail': {'width': 60, 'height': 60},
-        'viewImage': {'width': 200, 'height': 200},
+    "avatar": {
+        "thumbnail": {"width": 60, "height": 60},
+        "viewImage": {"width": 200, "height": 200},
     }
 }
 
-WS_HOST = env('WSHOST', '0.0.0.0')
-WS_PORT = env('WSPORT', '5100')
+WS_HOST = env("WSHOST", "0.0.0.0")
+WS_PORT = env("WSPORT", "5100")
 
-LOG_CONFIG_FILE = env('LOG_CONFIG_FILE', 'logging_config.yml')
+LOG_CONFIG_FILE = env("LOG_CONFIG_FILE", "logging_config.yml")
 
-REDIS_URL = env('REDIS_URL', 'redis://localhost:6379')
-if env('REDIS_PORT'):
-    REDIS_URL = env('REDIS_PORT').replace('tcp:', 'redis:')
-BROKER_URL = env('CELERY_BROKER_URL', REDIS_URL)
+REDIS_URL = env("REDIS_URL", "redis://localhost:6379")
+if env("REDIS_PORT"):
+    REDIS_URL = env("REDIS_PORT").replace("tcp:", "redis:")
+BROKER_URL = env("CELERY_BROKER_URL", REDIS_URL)
 
 PUBLISH_ASSOCIATED_ITEMS = True
 
@@ -55,15 +55,15 @@ PUBLISHED_CONTENT_EXPIRY_MINUTES = 60 * 24 * 30
 AUDIT_EXPIRY_MINUTES = PUBLISHED_CONTENT_EXPIRY_MINUTES
 CONTENT_API_EXPIRY_DAYS = 15
 
-with open(os.path.join(os.path.dirname(__file__), 'picture-profile.json')) as profile_json:
+with open(os.path.join(os.path.dirname(__file__), "picture-profile.json")) as profile_json:
     picture_profile = json.load(profile_json)
 
 EDITOR = {
-    "picture": picture_profile['editor'],
+    "picture": picture_profile["editor"],
 }
 
 SCHEMA = {
-    "picture": picture_profile['schema'],
+    "picture": picture_profile["schema"],
 }
 
 # media required fields
