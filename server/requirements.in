@@ -1,5 +1,5 @@
 gunicorn
 honcho
 
-git+https://github.com/petrjasek/superdesk-core.git@hotfix/2.5.4#egg=superdesk-core
-git+https://github.com/superdesk/superdesk-analytics.git@v2.5.2#egg=superdesk-analytics
+git+https://github.com/superdesk/superdesk-core.git@release/2.9#egg=superdesk-core
+git+https://github.com/superdesk/superdesk-analytics.git@release/2.10#egg=superdesk-analytics
