@@ -21,10 +21,7 @@ init_data = Path(ABS_PATH) / "data"
 if init_data.exists():
     INIT_DATA_PATH = init_data
 
-INSTALLED_APPS = [
-    "apps.languages",
-    "analytics"
-]
+INSTALLED_APPS = ["apps.languages", "analytics"]
 
 RENDITIONS = {
     "picture": {
@@ -35,7 +32,7 @@ RENDITIONS = {
     "avatar": {
         "thumbnail": {"width": 60, "height": 60},
         "viewImage": {"width": 200, "height": 200},
-    }
+    },
 }
 
 WS_HOST = env("WSHOST", "0.0.0.0")
@@ -55,7 +52,9 @@ PUBLISHED_CONTENT_EXPIRY_MINUTES = 60 * 24 * 30
 AUDIT_EXPIRY_MINUTES = PUBLISHED_CONTENT_EXPIRY_MINUTES
 CONTENT_API_EXPIRY_DAYS = 15
 
-with open(os.path.join(os.path.dirname(__file__), "picture-profile.json")) as profile_json:
+with open(
+    os.path.join(os.path.dirname(__file__), "picture-profile.json")
+) as profile_json:
     picture_profile = json.load(profile_json)
 
 EDITOR = {
@@ -92,11 +91,10 @@ VALIDATOR_MEDIA_METADATA = {
     "copyrightnotice": {
         "required": False,
     },
-
 }
 
 PUBLISH_QUEUE_EXPIRY_MINUTES = 60 * 24 * 15  # 15d
-KEYWORDS_ADD_MISSING_ON_PUBLISH=True
+KEYWORDS_ADD_MISSING_ON_PUBLISH = True
 
 ANALYTICS_ENABLE_SCHEDULED_REPORTS = strtobool(
     env("ANALYTICS_ENABLE_SCHEDULED_REPORTS", "true")
