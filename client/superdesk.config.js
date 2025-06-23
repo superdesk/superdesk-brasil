@@ -11,6 +11,7 @@ module.exports = function(grunt) {
             'superdesk.analytics'
         ],
         importApps: [
+            '../index',
             'superdesk-publisher',
             'superdesk-analytics'
         ],
